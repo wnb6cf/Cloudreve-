@@ -7,8 +7,10 @@ WORKDIR /src
 # 拷贝当前目录的 src 目录到容器的 /src 目录
 COPY src /src
 
+# 拷贝 src 目录下的 requirements.txt 文件到容器内的 /src 目录
+COPY src/requirements.txt /src/requirements.txt
+
 # 安装 requirements.txt 中的依赖
-COPY requirements.txt /src/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 启动程序
