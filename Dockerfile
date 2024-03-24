@@ -8,7 +8,8 @@ WORKDIR /src
 COPY src /src
 
 # 安装 requirements.txt 中的依赖
+COPY requirements.txt /src/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 启动程序
-cmd ["python", "cloudreve_pay.py"]
+CMD ["python", "cloudreve_pay.py"]
